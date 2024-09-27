@@ -1,8 +1,13 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Google</title>
-    <link rel="stylesheet" href="top_container.css">
-    <link rel="stylesheet" href="middle_container.css">
+    <link rel="icon" href="assets/google_title_icon.png" type="image/icon type" />
+    <link rel="stylesheet" href="google_clone_css/top_container.css" />
+    <link rel="stylesheet" href="google_clone_css/middle_container.css" />
+    <link rel="stylesheet" href="google_clone_css/profile_pic_options.css" />
+    <link rel="stylesheet" href="google_clone_css/switch.css" />
+    <link rel="stylesheet" href="google_clone_css/dark_mode.css" />
 </head>
 
 <style>
@@ -10,7 +15,6 @@
         background-color: white;
         margin: 0;
         height: 100%;
-        position: relative;
     }
 </style>
 
@@ -18,32 +22,61 @@
     <!--Top Container-->
     <div class="top_container">
         <!--About-->
-        <div class="about">
-            <p id="about">About</p>
+        <div class="about" onclick="openAbout()">
+            <p class="top-text">About</p>
         </div>
         <!--Store-->
-        <div class="store">
-            <p id="store">Store</p>
+        <div class="store" onclick="openStore()">
+            <p class="top-text">Store</p>
         </div>
 
         <!--Profile Pic-->
-        <div class="profile-pic">
+        <div class="profile-pic" onclick="enableProfileOptions()">
             <img id="profile-pic" src="assets/profile_pic.png">
         </div>
+
         <!--Google Apps 9 dot icon-->
         <div class="google-apps">
             <img id="google-apps" src="assets/google_apps_icon.png">
         </div>
 
         <!--Images-->
-        <div class="images">
-            
-            <p id="images">Images</p>
+        <div class="images" onclick="openGoogleImages()">
+            <p class="top-text">Images</p>
         </div>
 
         <!--Gmail-->
-        <div class="gmail">
-            <p id="gmail">Gmail</p>
+        <div class="gmail" onclick="openMail()">
+            <p class="top-text">Gmail</p>
+        </div>
+    
+    </div>
+
+    <!--Profile Pic Options, upon clicking on profile picture-->
+    <div id="profile-pic-options">
+        <!--toggle theme-->
+        <div id="theme-toggle-wrapper">
+            <p class="options-text">Toggle Theme</p>
+
+            <!--Toggle-->
+            <!--From Uiverse.io by andrew-demchenk0 --> 
+            <div class="switch-wrapper">
+                <label class="switch">
+                <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
+                <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
+                <input type="checkbox" class="input" id="toggle-theme">
+                <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!--Creator lmao-->
+        <div id="credits">
+            <p class="options-text">Credits<br />Made by WhackAPigeon</p>
+        </div>
+
+        <div id="github-button-wrapper" onclick="openGithub()">
+            GitHub
         </div>
     </div>
 
@@ -53,16 +86,14 @@
         <img id="google_icon" src="assets/google_icon.png">
 
         <!--Search bar-->
-        <div class="search-bar">
+        <div id="search-bar">
             <!--Search icon-->
             <div id="search-icon-wrapper">
                 <img id="search-icon" src="assets/search_icon.png">
             </div>
 
             <!--Text area-->
-            <div id="textarea">
-
-            </div>
+            <div id="textarea"> </div>
 
             <!--Mic and Image-->
             <div id="source-icon-wrapper">
@@ -79,22 +110,27 @@
             </div>
 
             <!--I am feeling lucky-->
-            <div id="feeling-lucky-wrapper">
+            <div id="feeling-lucky-wrapper" onclick="openDoodle()">
                 <p id="feeling-lucky">I'm Feeling Lucky</p>
             </div>
         </div>
 
         <!--Languages in Google-->
         <p id="language">Google offered in:
-            <a href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=hi&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCM">हिन्दी</a>
-            <a href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=bn&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCQ">বাংলা</a>
-            <a href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=te&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCU">తెలుగు</a>
-            <a href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=mr&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCY">मराठी</a>
-            <a href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=ta&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCc">தமிழ்</a>
-            <a href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=gu&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCg">ગુજરાતી</a>
-            <a href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=kn&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCk">ಕನ್ನಡ</a>
-            <a href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=ml&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCo">മലയാളം</a>
-            <a href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=pa&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCs">ਪੰਜਾਬੀ</a>
+            <span id="lang-links">
+                <a class="lang" href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=hi&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCM">हिन्दी</a>
+                <a class="lang" href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=bn&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCQ">বাংলা</a>
+                <a class="lang" href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=te&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCU">తెలుగు</a>
+                <a class="lang" href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=mr&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCY">मराठी</a>
+                <a class="lang" href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=ta&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCc">தமிழ்</a>
+                <a class="lang" href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=gu&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCg">ગુજરાતી</a>
+                <a class="lang" href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=kn&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCk">ಕನ್ನಡ</a>
+                <a class="lang" href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=ml&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCo">മലയാളം</a>
+                <a class="lang" href="https://www.google.com/setprefs?sig=0_T6LbWkRp4eF8fOj1n8pyVsZzgM8%3D&hl=pa&source=homepage&sa=X&ved=0ahUKEwizv--j7cKIAxVVT2cHHXnzK6kQ2ZgBCCs">ਪੰਜਾਬੀ</a>
+            </span>
         </p>
     </div>
 </body>
+
+<script src="google.js"></script>
+</html>

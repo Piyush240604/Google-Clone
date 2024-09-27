@@ -5,6 +5,7 @@
     align-items: center;
     margin-top: 85px;
     flex-direction: column;
+    position: relative;
 }
 
 #google_icon {
@@ -12,7 +13,7 @@
     width: 20%;
 }
 
-.search-bar {
+#search-bar {
     margin-top: 30px;
     height: 55px;
     width: 720px;
@@ -23,6 +24,16 @@
     justify-content: space-between;
     padding: 0 10px;
     box-sizing: border-box;
+}
+
+.hover-effect {
+    box-shadow: 0px 1px 5px #d9d9d9;
+    cursor: text;
+} 
+
+.focus-effect{
+    box-shadow: 0px 1px 5px #d9d9d9;
+    outline: none;
 }
 
 #search-icon-wrapper {
@@ -58,12 +69,19 @@
     margin-right: 5px;
 }
 
+#audio-icon:hover {
+    cursor: pointer;
+}
+
 #photo-icon {
     height: 30px;
     width: 30px;
     margin-left: 15px;
 }
 
+#photo-icon:hover {
+    cursor: pointer;
+}
 .search-and-lucky-wrapper {
     height: 100px;
     width: 100%;
@@ -83,6 +101,11 @@
     margin-right: 20px;
 }
 
+#google-search-wrapper:hover {
+    box-shadow: 0px 0px 1px;
+    cursor: pointer;
+}
+
 #google-search {
     color: #1F1F1F;
     font-family: Arial, Helvetica, sans-serif;
@@ -99,6 +122,11 @@
     margin-right: 20px;
 }
 
+#feeling-lucky-wrapper:hover {
+    box-shadow: 0px 0px 1px;
+    cursor: pointer;
+}
+
 #feeling-lucky {
     color: #1F1F1F;
     font-family: Arial, Helvetica, sans-serif;
@@ -110,6 +138,10 @@
     font-size: 18px;
     color: #1F1F1F;
     display: inline-block;
+}
+
+#lang-link {
+    margin-right: 10px;
 }
 
 

@@ -1,0 +1,84 @@
+.top_container {
+    height: 60px;
+    margin-top: 8px;
+}
+
+/*All the text in the Top Container*/
+.top-text {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+.top-text:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.about {
+    height: 45px;
+    width: 50px;
+    margin-top: 3px;
+    padding-left: 30px;
+    display: inline-block;
+}
+
+.store {
+    height: 45px;
+    width: 50px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+.gmail {
+    margin-top: 3px;
+    float: right;
+    margin-right: 20px;
+}
+
+.images {
+    margin-top: 3px;
+    float: right;
+}
+
+.google-apps {
+    float: right;
+    margin-left: 15px;
+    margin-right: 8px;
+}
+
+#google-apps {
+    margin-top: 8px;
+    margin-left: 15px;
+    height: 30px;
+    width: 30px;
+    padding: 8px;
+}
+
+
+#google-apps:hover {
+    background-color: lightgrey;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile-pic {
+    float: right;
+    margin-left: 15px;
+    margin-top: 8px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.profile-pic:hover {
+    box-shadow: 0px 2px 2px;
+    cursor: pointer;
+}
+#profile-pic {
+    height: 43px;
+    width: 43px;
+    border-radius: 50%;
+}
